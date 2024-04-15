@@ -1,0 +1,14 @@
+*.ckpt
+*.safetensors
+*.bin
+data
+old
+tmp
+__pycache__
+.DS_Store
+.*.swp
+*.egg-info
+.idea
+*.log
+lightning_logs
+.pytest_cache

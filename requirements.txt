@@ -1,0 +1,9 @@
+torch
+transformers @ git+https://github.com/huggingface/transformers.git
+bitsandbytes
+peft @ git+https://github.com/huggingface/peft.git
+trl @ git+https://github.com/lvwerra/trl.git
+scipy
+scikit-learn
+pandas
+bardapi
