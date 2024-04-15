@@ -549,7 +549,13 @@ class ModelingUtils(object):
     }
 
     @classmethod
-    def load_peft_lm(cls, lm_type, lm_name_or_path, bits=None, force_download=False):
+    def load_peft_lm(cls,
+                     lm_type,
+                     lm_name_or_path,
+                     bits=None,
+                     torch_dtype='auto',
+                     device_map='auto',
+                     force_download=False):
         """
         Load the PEFT lm and tokenizer
         :param lm_type is the type of the model, i.e., 'peft', 'mlm', 'causal_lm'
@@ -614,8 +620,8 @@ class ModelingUtils(object):
                                                                  quantization_config=create_bnb_config(bits=bits),
                                                                  # load_in_8bit=(bits == 8),
                                                                  # load_in_4bit=(bits == 4),
-                                                                 # torch_dtype=torch.bfloat16,
-                                                                 device_map='auto',
+                                                                 torch_dtype=torch_dtype,
+                                                                 device_map=device_map,
                                                                  force_download=force_download)
         # Using the prepare_model_for_kbit_training method from PEFT
         model = prepare_model_for_kbit_training(model,
