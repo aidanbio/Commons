@@ -687,7 +687,7 @@ class BaseTest(unittest.TestCase):
         super().setUp()
 
         warnings.filterwarnings('ignore')
-        logging.config.fileConfig('../config/logging.conf')
+        logging.config.fileConfig('config/logging.conf')
 
         self.test_synonyms = [
             'BoLA-AW10', 'BoLA-D18.4', 'BoLA-HD6', 'BoLA-JSP.1', 'BoLA-T2C', 'BoLA-T2a',
